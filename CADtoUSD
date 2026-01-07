@@ -1,5 +1,4 @@
 def print_header():
-    """Print a nice header for the currency converter"""
     print("\n" + "=" * 50)
     print("💱  CURRENCY CONVERTER  💱")
     print("🇨🇦  Canadian Dollar (CAD) → US Dollar (USD)  🇺🇸")
