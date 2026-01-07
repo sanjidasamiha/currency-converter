@@ -1,0 +1,44 @@
+def print_header():
+    """Print a nice header for the currency converter"""
+    print("\n" + "=" * 50)
+    print("💱  CURRENCY CONVERTER  💱")
+    print("🇨🇦  Canadian Dollar (CAD) → US Dollar (USD)  🇺🇸")
+    print("=" * 50 + "\n")
+
+def convert_currency(cad_amount, exchange_rate=0.74):
+    """Convert CAD to USD"""
+    return cad_amount * exchange_rate
+
+def main():
+    # Display header
+    print_header()
+    
+    # Exchange rate info
+    exchange_rate = 0.74
+    print(f"📊 Current Exchange Rate: 1 CAD = ${exchange_rate} USD\n")
+    
+    # Get user input
+    try:
+        cad_amount = float(input("💰 Enter amount in Canadian Dollars: $"))
+        
+        # Perform conversion
+        usd_amount = convert_currency(cad_amount, exchange_rate)
+        
+        # Display result
+        print("\n" + "-" * 50)
+        print(f"✨ RESULT:")
+        print(f"   ${cad_amount:.2f} CAD = ${usd_amount:.2f} USD")
+        print("-" * 50 + "\n")
+        
+    except ValueError:
+        print("\n❌ Error: Please enter a valid number!")
+    
+    # Ask if user wants to convert again
+    again = input("Convert another amount? (y/n): ").lower()
+    if again == 'y':
+        main()
+    else:
+        print("\n👋 Thanks for using the Currency Converter! Goodbye!\n")
+
+if __name__ == "__main__":
+    main()
